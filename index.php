@@ -12,7 +12,21 @@ and open the template in the editor.
     <body>
         <?php
         // put your code here
-        echo "Hello...is anyone out there...";
+        include('Student.php');
+        $students = array();
+        $first = new Student();
+        $first->surname = "Doe";
+        $first->first_name = "John";
+        $first->add_email('home', 'john@doe.com');
+        $first->add_email('work', 'yo@yo.com');
+        $first->add_grade(65);
+        $first->add_grade(75);
+        $first->add_grade(55);
+        $students['j123'] = $first;
+        
+        foreach ($students as $student)
+            echo $student->toString();
+        //echo "Hello...is anyone out there...";
         ?>
     </body>
 </html>
